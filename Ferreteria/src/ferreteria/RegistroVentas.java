@@ -41,4 +41,22 @@ public void mostrarVentas(){
       
 }
 
+/**
+ * Recorre el array de ventas y compara las fechas con el parámetro recibido, muestra las ventas 
+ * que coincidan
+ * @param fecha Un String con la fecha a comparar (dd/mm/aaaa) solo números
+ */
+public void verVentasFecha(String fecha){
+  int cont=0;
+  for(int i=0;i<ventas.size();i++){
+    String f = ventas.get(i).getFecha();
+    if(f.equals(fecha)){
+      System.out.println(ventas.get(i).toString());
+      cont++;
+    }
+  }
+  if(cont==0){
+    System.out.println("No se encontraron coincidencias");
+  }
+}
 }
