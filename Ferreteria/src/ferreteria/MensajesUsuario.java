@@ -32,6 +32,7 @@ public class MensajesUsuario {
     System.out.println("11 Vender");
     System.out.println("12 Ver ventas");
     System.out.println("13 Ver ventas por fecha");
+    System.out.println("14 Ver ganancias por día");
     System.out.println("0 Salir\n");
     
   }
@@ -123,6 +124,11 @@ public class MensajesUsuario {
         System.out.println("Ingresa la fecha (dd/mm/aaaa) solo números");
         informacion = leerInfo();
         rv.verVentasFecha(informacion);
+        break;
+      case 14:
+        System.out.println("Ingresa la fecha (dd/mm/aaaa) solo números");
+        informacion = leerInfo();
+        rv.calcularGananciasDia(informacion);
         break;
       default:
         System.out.println("¿Me quieres ver la cara de estúpida?\n");
