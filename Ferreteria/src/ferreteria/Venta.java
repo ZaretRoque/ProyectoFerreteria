@@ -2,14 +2,17 @@
 package ferreteria;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
- *
+ *Clase que define una venta
  * @author Zaret Roque
  */
 public class Venta implements Serializable{
 
   private String folio;
+  private String fecha;
   private String claveProducto;
   private int cantidadProducto;
   private double total;
@@ -22,6 +25,9 @@ public class Venta implements Serializable{
     this.claveProducto = claveProducto;
     this.cantidadProducto = cantidadProducto;
     this.total = total;
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); /* Crea un objeto para obtener la 
+    fecha en el formato que se pasa como parámetro*/
+    fecha = sdf.format(new Date()); //Obtiene la fecha, la formatea y la guarda en String
   }
   
 
@@ -31,6 +37,14 @@ public class Venta implements Serializable{
 
   public void setFolio(String folio) {
     this.folio = folio;
+  }
+
+  public String getFecha() {
+    return fecha;
+  }
+
+  public void setFecha(String fecha) {
+    this.fecha = fecha;
   }
 
   public String getClaveProducto() {
@@ -59,7 +73,7 @@ public class Venta implements Serializable{
   
   @Override
   public String toString(){
-    return "Folio: "+folio+" || Producto: "+claveProducto+" || Cantidad: "+cantidadProducto
+    return "Folio: "+folio+" || Fecha: "+fecha+" || Producto: "+claveProducto+" || Cantidad: "+cantidadProducto
         +" || Total: "+total;
   }
   
