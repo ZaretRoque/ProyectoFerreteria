@@ -29,7 +29,7 @@ public class Inventario {
   }
   
   /**
-   * Inicializa un nuevo prodcuto y lo añade al arrayList
+   * Inicializa un nuevo producto y lo añade al arrayList
    */
   public void agregarProducto(){
     Teclado tec = new Teclado();
@@ -233,8 +233,9 @@ public class Inventario {
          if(cantidad <= stock.get(indice).getExistencia()){
            double precio = cantidad * stock.get(indice).getPrecioCompra();
            double ganancia = precio * 0.5;
-           double iva = precio * 0.16;
-           double total = precio + iva + ganancia;
+           double subtotal = precio + ganancia;
+           double iva = subtotal * 0.16;
+           double total = subtotal + iva;
            stock.get(indice).setExistencia(stock.get(indice).getExistencia()-cantidad);
            Venta ven = new Venta(clavee, cantidad, total, ganancia); /*crea un objeto Venta para 
            guardarlo en archivo*/
