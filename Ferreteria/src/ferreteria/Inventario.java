@@ -221,8 +221,8 @@ public class Inventario {
    public void vender(){
      Teclado tec = new Teclado();
      System.out.println("Ingresa la clave del producto");
-     String clave = tec.leerString();
-     int indice = buscarClave(clave);
+     String clavee = tec.leerString();
+     int indice = buscarClave(clavee);
      
      if(indice > 0){
        if(stock.get(indice).getExistencia() == 0){
@@ -232,10 +232,12 @@ public class Inventario {
          int cantidad = tec.leerEntero();
          if(cantidad <= stock.get(indice).getExistencia()){
            double precio = cantidad * stock.get(indice).getPrecioCompra();
+           double ganancia = precio * 0.5;
            double iva = precio * 0.16;
-           double total = precio + iva;
+           double total = precio + iva + ganancia;
            stock.get(indice).setExistencia(stock.get(indice).getExistencia()-cantidad);
-           Venta ven = new Venta(clave, cantidad, total); // crea un objeto Venta para guardarlo en archivo
+           Venta ven = new Venta(clavee, cantidad, total, ganancia); /*crea un objeto Venta para 
+           guardarlo en archivo*/
            RegistroVentas rv = new RegistroVentas(); //Este objeto se encarga de controlar las ventas
            rv.agregarVenta(ven);
            arch.escribirStock(stock);
