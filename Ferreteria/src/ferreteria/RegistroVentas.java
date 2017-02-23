@@ -59,4 +59,24 @@ public void verVentasFecha(String fecha){
     System.out.println("No se encontraron coincidencias");
   }
 }
+
+/**
+ * Calcula las ganancias de una fecha determinada
+ * @param fecha la fecha de la cual se quieren las ganancias (dd/mm/aaaa)
+ */
+public void calcularGananciasDia(String fecha){
+  double ganancias=0;
+  for(int i=0;i<ventas.size();i++){
+    String f = ventas.get(i).getFecha();
+    if(f.equals(fecha)){
+      ganancias += ventas.get(i).getGanancia();
+    }
+  }
+  if(ganancias == 0){
+    System.out.println("No hubo ganancias ese día");
+  }else{
+    System.out.println("Las ganancias son: "+ganancias);
+  }
+}
+
 }
