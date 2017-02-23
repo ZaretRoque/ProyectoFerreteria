@@ -16,15 +16,17 @@ public class Venta implements Serializable{
   private String claveProducto;
   private int cantidadProducto;
   private double total;
+  private double ganancia;
   
   public Venta(){
     
   }
 
-  public Venta(String claveProducto, int cantidadProducto, double total) {
+  public Venta(String claveProducto, int cantidadProducto, double total, double ganancia) {
     this.claveProducto = claveProducto;
     this.cantidadProducto = cantidadProducto;
     this.total = total;
+    this.ganancia = ganancia;
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); /* Crea un objeto para obtener la 
     fecha en el formato que se pasa como parámetro*/
     fecha = sdf.format(new Date()); //Obtiene la fecha, la formatea y la guarda en String
@@ -70,11 +72,19 @@ public class Venta implements Serializable{
   public void setTotal(double total) {
     this.total = total;
   }
+
+  public double getGanancia() {
+    return ganancia;
+  }
+
+  public void setGanancia(double ganancia) {
+    this.ganancia = ganancia;
+  }
   
   @Override
   public String toString(){
     return "Folio: "+folio+" || Fecha: "+fecha+" || Producto: "+claveProducto+" || Cantidad: "+cantidadProducto
-        +" || Total: "+total;
+        +" || Total: "+total+" || Ganancia: "+ganancia;
   }
   
 }
