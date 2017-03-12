@@ -33,6 +33,7 @@ public class MensajesUsuario {
     System.out.println("12 Ver ventas");
     System.out.println("13 Ver ventas por fecha");
     System.out.println("14 Ver ganancias por día");
+    System.out.println("15 Agregar usuario");
     System.out.println("0 Salir\n");
     
   }
@@ -61,6 +62,7 @@ public class MensajesUsuario {
   public void realizarOpcion(int op) {
     Inventario inv = new Inventario();
     RegistroVentas rv = new RegistroVentas();
+    ControlUsuarios cu = new ControlUsuarios();
     String informacion;
     int indice;
     switch (op) {
@@ -129,6 +131,12 @@ public class MensajesUsuario {
         System.out.println("Ingresa la fecha (dd/mm/aaaa) solo números");
         informacion = leerInfo();
         rv.calcularGananciasDia(informacion);
+        break;
+      case 15:
+        cu.agregarUsuario();
+        break;
+      case 16:
+        cu.mostrarUsuarios();
         break;
       default:
         System.out.println("¿Me quieres ver la cara de estúpida?\n");

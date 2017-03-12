@@ -130,5 +130,50 @@ public class Archivo {
       return false;
     }
   }
+    /**
+   * Se encarga de enviar un ArrayList de usuarios a un archivo para su uso posterior
+   * @param usuarios Recibe un objeto ArrayList de tipo Usuario
+   */
+  public void escribirUsuario(ArrayList<Usuario> usuarios){
+    try{
+      fos = new FileOutputStream("usuarios.txt");
+      os = new ObjectOutputStream(fos);
+      os.writeObject(usuarios);
+      os.close();
+    }catch(FileNotFoundException e){
+      e.printStackTrace();
+    }catch(IOException e){
+      e.printStackTrace();
+    }
+  }
+  
+  /**
+   * Lee el ArrayList guardado
+   * @return El ArrayList que contiene los usuarios
+   */
+  public ArrayList<Usuario> leerUsuario(){
+    ArrayList<Usuario> temp = null;
+    try{
+      fis = new FileInputStream("usuarios.txt");
+      ois = new ObjectInputStream(fis);
+      temp = (ArrayList<Usuario>) ois.readObject();
+      ois.close();
+      } catch (IOException ex) {
+      Logger.getLogger(Archivo.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (ClassNotFoundException ex) {
+      Logger.getLogger(Archivo.class.getName()).log(Level.SEVERE, null, ex);
+      
+    }
+    return temp;
+    }
+ public boolean existeUsuario(){
+    try{
+      fis = new FileInputStream("usuarios.txt");
+      return true;
+    }catch(FileNotFoundException e){
+      return false;
+    }
+  }
+ 
   }
 
