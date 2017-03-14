@@ -12,6 +12,10 @@ Archivo arch = new Archivo();
 ArrayList<Venta> ventas;
 int folio;
 
+  public int getFolio() {
+    return folio;
+  }
+
 public RegistroVentas(){
   if(arch.existeVenta()){
     ventas = arch.leerVenta();
@@ -34,10 +38,9 @@ public void agregarVenta(Venta ven){
 /**
  * Recorre el array y lo muestra
  */
-public void mostrarVentas(){
-  for(int i=0;i<ventas.size();i++){
-    System.out.println(ventas.get(i).toString());
-  }
+public String mostrarVentas(int indice){
+    return ventas.get(indice).toString();
+  
       
 }
 

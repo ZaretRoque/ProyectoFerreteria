@@ -44,6 +44,11 @@
                   <fx:include source="Editar.fxml" />
                </content>
             </Tab>
+            <Tab text="Ver ventas">
+               <content>
+                  <fx:include source="VerVentas.fxml" />
+               </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>

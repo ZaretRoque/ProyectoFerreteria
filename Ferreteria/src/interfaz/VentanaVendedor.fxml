@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="interfaz.VentanaVendedorController">
+   <children>
+      <TabPane layoutX="63.0" layoutY="78.0" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Vender producto">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="32.0" text="Clave de producto:" />
+                        <TextField fx:id="tClave" layoutX="163.0" layoutY="28.0" />
+                        <Button fx:id="bVender" layoutX="28.0" layoutY="186.0" mnemonicParsing="false" onAction="#vender" text="Vender" />
+                        <Label layoutX="28.0" layoutY="105.0" text="Cantidad a vender:" />
+                        <TextField fx:id="tCantidad" layoutX="163.0" layoutY="101.0" />
+                        <Label layoutX="318.0" layoutY="234.0" text="Total:" />
+                        <Label fx:id="labTotal" layoutX="370.0" layoutY="234.0" prefHeight="17.0" prefWidth="129.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Ver inventario">
+               <content>
+                  <fx:include source="VerInventario.fxml" />
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

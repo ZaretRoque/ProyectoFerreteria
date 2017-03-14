@@ -62,6 +62,23 @@ public class Main extends Application {
     }
   }
   
+  public void mostrarMenuVendedor(){
+    try{
+    FXMLLoader loader = new FXMLLoader(Main.class.getResource("VentanaVendedor.fxml"));
+    AnchorPane ventanaVend = (AnchorPane) loader.load();
+    Stage ventana = new Stage();
+    ventana.setTitle("Administrador");
+    ventana.initOwner(primaryStage);
+    Scene scene = new Scene(ventanaVend);
+    ventana.setScene(scene);
+    VentanaVendedorController controller = loader.getController();
+    controller.setStagePrincipal(ventana);
+    ventana.show();
+    }catch(Exception ex){
+      Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+    }
+  }
+  
   /**
    * @param args the command line arguments
    */

@@ -60,6 +60,7 @@ public class LoginController implements Initializable {
       principal.mostrarMenuAdmin();
     } else if ((existe == true) && (usuario.equals("vendedor"))) {
       System.out.println("vendedor");
+      principal.mostrarMenuVendedor();
     } else {
       Alert alert = new Alert(AlertType.ERROR);
       alert.setTitle("Error");

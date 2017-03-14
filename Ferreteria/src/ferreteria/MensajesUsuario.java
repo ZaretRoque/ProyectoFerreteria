@@ -120,7 +120,7 @@ public class MensajesUsuario {
         inv.vender();
         break;
       case 12:
-        rv.mostrarVentas();
+        //rv.mostrarVentas();
         break;
       case 13:
         System.out.println("Ingresa la fecha (dd/mm/aaaa) solo números");
