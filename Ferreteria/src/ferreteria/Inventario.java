@@ -17,6 +17,10 @@ public class Inventario {
   Archivo arch = new Archivo();
   ArrayList<Producto> stock;
   int clave;
+
+  public int getClave() {
+    return clave;
+  }
   
   
   public Inventario(){
@@ -31,28 +35,28 @@ public class Inventario {
   /**
    * Inicializa un nuevo producto y lo añade al arrayList
    */
-  public void agregarProducto(){
-    Teclado tec = new Teclado();
+  public void agregarProducto(String nombre, String descripcion, double precio, double existencia, String tipo){
+    //Teclado tec = new Teclado();
     Producto prod = new Producto();
-    String info;
-    double aux;
-    System.out.println("Ingresa los datos del producto");
+    //String info;
+    //double aux;
+    //System.out.println("Ingresa los datos del producto");
     prod.setClave("PK-"+clave);
-    System.out.println("Nombre:");
-    info = tec.leerString();
-    prod.setNombre(info);
-    System.out.println("Descripción");
-    info = tec.leerString();
-    prod.setDescripcion(info);
-    System.out.println("Tipo de unidad");
-    info = tec.leerString();
-    prod.setTipoUnidad(info);
-    System.out.println("Precio de compra");
-    aux = tec.leerDouble();
-    prod.setPrecioCompra(aux);
-    System.out.println("Existencia");
-    aux = tec.leerDouble();
-    prod.setExistencia(aux);
+    //System.out.println("Nombre:");
+    //info = tec.leerString();
+    prod.setNombre(nombre);
+    //System.out.println("Descripción");
+    //info = tec.leerString();
+    prod.setDescripcion(descripcion);
+    //System.out.println("Tipo de unidad");
+    //info = tec.leerString();
+    prod.setTipoUnidad(tipo);
+    //System.out.println("Precio de compra");
+    //aux = tec.leerDouble();
+    prod.setPrecioCompra(precio);
+    //System.out.println("Existencia");
+    //aux = tec.leerDouble();
+    prod.setExistencia(existencia);
     stock.add(prod);
     arch.escribirStock(stock);
   }
@@ -70,8 +74,8 @@ public class Inventario {
    * Muestra la información del producto
    * @param indice Espera un entero para indicar la posición del array en la que se encuentra
    */
-  public void mostrarInformacion(int indice){
-    System.out.println(stock.get(indice).toString());
+  public String mostrarInformacion(int indice){
+    return stock.get(indice).toString();
   }
   
   /**
@@ -137,6 +141,14 @@ public class Inventario {
     }
     arch.escribirStock(stock);
   }
+ 
+ public void editarInterfaz(String nombre, String descripcion, double precio, double existencia, String tipo, int indice){
+     stock.get(indice).setNombre(nombre);
+     stock.get(indice).setDescripcion(descripcion);
+     stock.get(indice).setPrecioCompra(precio);
+     stock.get(indice).setExistencia(existencia);
+     stock.get(indice).setTipoUnidad(tipo);
+   }
  
  /**
    * Busca el nombre en los objetos del array, retorna el índice donde se encontró. Insensible a 
@@ -249,5 +261,10 @@ public class Inventario {
        }
      }
    }
+   
+   public Producto getProducto(int indice){
+     return stock.get(indice);
+   }
+   
    
 }

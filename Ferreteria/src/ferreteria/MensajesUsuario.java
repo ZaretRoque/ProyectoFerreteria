@@ -70,7 +70,7 @@ public class MensajesUsuario {
         System.out.println("Ya me usaste. ¿Estás feliz?");
         break;
       case 1:
-        inv.agregarProducto();
+        //inv.agregarProducto();
         break;
       case 2:
         System.out.println("Ingresa la clave del producto a eliminar");

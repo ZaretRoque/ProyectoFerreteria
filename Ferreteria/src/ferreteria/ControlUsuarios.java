@@ -49,4 +49,19 @@ public void mostrarUsuarios(){
   }
 }
 
+public boolean buscarUsuario(String usu, String pass){
+  boolean existe=false;
+  for (int i = 0; i < usuarios.size(); i++) {
+   if(usu.equals(usuarios.get(i).getNombre())){
+     if(pass.equals(usuarios.get(i).getPassword())){
+       existe = true;
+       break;
+     }
+   } else{
+     existe = false;
+   }
+  }
+  return existe;
+}
+
 }
