@@ -83,8 +83,8 @@ public class Venta implements Serializable{
   
   @Override
   public String toString(){
-    return "Folio: "+folio+" || Fecha: "+fecha+" || Producto: "+claveProducto+" || Cantidad: "+cantidadProducto
-        +" || Total: "+total+" || Ganancia: "+ganancia;
+    return "Folio: "+folio+"\nFecha: "+fecha+"\nProducto: "+claveProducto+"\nCantidad: "+cantidadProducto
+        +"\nTotal: "+total+"\nGanancia: "+ganancia;
   }
   
 }

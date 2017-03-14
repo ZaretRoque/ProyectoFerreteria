@@ -49,6 +49,10 @@
                   <fx:include source="VerVentas.fxml" />
                </content>
             </Tab>
+            <Tab text="Vender producto">
+               <content>
+                  <fx:include source="Vender.fxml" />
+               </content></Tab>
         </tabs>
       </TabPane>
    </children>

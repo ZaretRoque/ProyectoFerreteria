@@ -74,8 +74,8 @@ public class Producto implements Serializable{
   
   @Override
   public String toString(){
-    return "Clave: "+clave+" || Nombre: "+nombre+" || Descripción: "+descripcion+" || Precio: "
-        +precioCompra+" || Existencia: "+existencia+" || Unidad: "+tipoUnidad;
+    return "Clave: "+clave+"\nNombre: "+nombre+"\nDescripción: "+descripcion+"\nPrecio: "
+        +precioCompra+"\nExistencia: "+existencia+"\nUnidad: "+tipoUnidad;
   }
   
   
