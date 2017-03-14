@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaz.VentanaAdminController">
+   <children>
+      <TabPane layoutX="14.0" layoutY="28.0" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab fx:id="tabAgregar" closable="false" text="Agregar producto">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="48.0" text="Nombre:" />
+                        <Label layoutX="14.0" layoutY="97.0" text="Descripción:" />
+                        <Label layoutX="13.0" layoutY="136.0" text="Precio de compra:" />
+                        <Label layoutX="11.0" layoutY="174.0" text="Existencia:" />
+                        <Label layoutX="13.0" layoutY="214.0" text="Tipo de unidad:" />
+                        <TextField fx:id="tNombre" layoutX="151.0" layoutY="44.0" />
+                        <TextField fx:id="tDescripcion" layoutX="151.0" layoutY="93.0" />
+                        <TextField fx:id="tPrecio" layoutX="151.0" layoutY="132.0" />
+                        <TextField fx:id="tExistencia" layoutX="151.0" layoutY="173.0" />
+                        <TextField fx:id="tTipo" layoutX="151.0" layoutY="210.0" />
+                        <Button fx:id="bAgregar" layoutX="456.0" layoutY="296.0" mnemonicParsing="false" onAction="#agregar" text="Agregar" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="tabEliminar" closable="false" text="Eliminar producto">
+               <content>
+                  <fx:include source="Eliminar.fxml" />
+               </content>
+            </Tab>
+            <Tab fx:id="tabVerInve" closable="false" text="Ver inventario">
+               <content>
+                  <fx:include source="VerInventario.fxml" />
+               </content>
+            </Tab>
+            <Tab text="Editar producto">
+               <content>
+                  <fx:include source="Editar.fxml" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="interfaz.EliminarController">
+   <children>
+      <Label layoutX="174.0" layoutY="53.0" text="Clave de producto:" />
+      <TextField fx:id="tClave" layoutX="326.0" layoutY="49.0" prefHeight="25.0" prefWidth="147.0" />
+      <Button fx:id="bEliminar" layoutX="274.0" layoutY="188.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+   </children>
+</AnchorPane>
