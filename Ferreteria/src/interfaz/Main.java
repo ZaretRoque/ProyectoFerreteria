@@ -27,7 +27,10 @@ public class Main extends Application {
     this.primaryStage = primaryStage;
     mostrarVentanaLogin();
   }
-
+  
+/**
+ * Permite mostrar la ventana de Login al arrancar el programa
+ */
   public void mostrarVentanaLogin() {
     try {
       FXMLLoader loader = new FXMLLoader(Main.class.getResource("Login.fxml"));
@@ -35,8 +38,8 @@ public class Main extends Application {
       Scene scene = new Scene(page);
       primaryStage.setScene(scene);
       primaryStage.setTitle("Login");
-      LoginController login = loader.getController();
-      login.setPrincipal(this);
+      LoginController login = loader.getController(); //carga el controlador de la ventana de Login
+      login.setPrincipal(this);//Le dice a la ventana de login a qué Stage pertenece
       login.info.setVisible(false);
       login.buscando.setVisible(false);
       primaryStage.show();
@@ -45,6 +48,9 @@ public class Main extends Application {
     }
   }
 
+  /**
+   * Permite mostrar la ventana con las opciones del administrador
+   */
   public void mostrarMenuAdmin(){
     try{
     FXMLLoader loader = new FXMLLoader(Main.class.getResource("VentanaAdmin.fxml"));
@@ -54,14 +60,17 @@ public class Main extends Application {
     ventana.initOwner(primaryStage);
     Scene scene = new Scene(ventanaAdmin);
     ventana.setScene(scene);
-    VentanaAdminController controller = loader.getController();
-    controller.setStagePrincipal(ventana);
+    VentanaAdminController controller = loader.getController(); //carga controlador de la ventana
+    controller.setStagePrincipal(ventana);//Asigna el Stage a la ventana
     ventana.show();
     }catch(Exception ex){
       Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
     }
   }
   
+  /**
+   * Permite mostrar la ventana con las opciones para el vendor
+   */
   public void mostrarMenuVendedor(){
     try{
     FXMLLoader loader = new FXMLLoader(Main.class.getResource("VentanaVendedor.fxml"));
@@ -71,8 +80,9 @@ public class Main extends Application {
     ventana.initOwner(primaryStage);
     Scene scene = new Scene(ventanaVend);
     ventana.setScene(scene);
-    VentanaVendedorController controller = loader.getController();
-    controller.setStagePrincipal(ventana);
+    VenderController controller = loader.getController(); //Carga el controlador de otra clase con 
+                                                          //fin de reutilizar código
+    controller.setStagePrincipal(ventana);//Asigna el Stage
     ventana.show();
     }catch(Exception ex){
       Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);

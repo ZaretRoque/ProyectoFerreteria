@@ -29,7 +29,7 @@ public class VerVentasController implements Initializable {
   @FXML
   private Button bVer;
 
-  @FXML
+  @FXML//Se ejecuta al presionar el botón Ver
   public void verVentas(ActionEvent e) {
     RegistroVentas rv = new RegistroVentas();
     int tope = rv.getFolio();

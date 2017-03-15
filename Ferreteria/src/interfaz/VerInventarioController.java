@@ -29,7 +29,7 @@ public class VerInventarioController implements Initializable {
   @FXML
   private Button bVer;
   
-  @FXML
+  @FXML//Se ejecuta al presionar el botón Ver
   public void verInventario(ActionEvent e){
     Inventario inv = new Inventario();
     int tope = inv.getClave();

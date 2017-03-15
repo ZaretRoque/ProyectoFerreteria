@@ -28,17 +28,31 @@ public class EliminarController implements Initializable {
   @FXML
   private Button bEliminar;
 
-  @FXML
+  @FXML//Se ejecuta cuando se presiona el botón Eliminar
   public void eliminar() {
-    Inventario inv = new Inventario();
+    
     String clave = tClave.getText();
+    
+    if(clave.length()>0){
+      
+    Inventario inv = new Inventario();
     int indice = inv.buscarClave(clave);
     inv.eliminarElemento(indice);
+    //Mostrar mensaje al usuario
     Alert alert = new Alert(AlertType.INFORMATION);
     alert.setTitle("Información");
     alert.setHeaderText(null);
     alert.setContentText("Elemento eliminado");
     alert.showAndWait();
+    
+    }else{
+      //Mostrar mensaje al usuario
+      Alert alert = new Alert(AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText(null);
+      alert.setContentText("Ingresa clave de producto");
+      alert.showAndWait();
+    }
   }
 
   /**

@@ -24,7 +24,7 @@ import javafx.scene.control.TextField;
  */
 public class LoginController implements Initializable {
 
-  private Main principal;
+  private Main principal; //Sirve para ligar el programa principal con las nuevas ventanas
 
   public Main getPrincipal() {
     return principal;
@@ -48,25 +48,47 @@ public class LoginController implements Initializable {
   @FXML
   public Label buscando;
 
-  @FXML
+  @FXML//Se ejecuta cuando se presiona el botón Entrar
   public void iniciarSesion() {
-    buscando.setVisible(true);
-    ControlUsuarios cu = new ControlUsuarios();
     String usuario = tUsuario.getText();
     String contrasena = tContrasena.getText();
+    
+    if(usuario.length()>0 && contrasena.length()>0){
+      
+    buscando.setVisible(true);
+    ControlUsuarios cu = new ControlUsuarios();
     boolean existe = cu.buscarUsuario(usuario, contrasena);
+    
     if ((existe == true) && (usuario.equals("admin"))) {
+      //Abre la ventana con las opciones para el administrador
       System.out.println("admin");
       principal.mostrarMenuAdmin();
+      tUsuario.setText(null);
+      tContrasena.setText(null);
+      buscando.setVisible(false);
+      
     } else if ((existe == true) && (usuario.equals("vendedor"))) {
+      //Abre la ventana con las opciones para el vendedor
       System.out.println("vendedor");
       principal.mostrarMenuVendedor();
+      tUsuario.setText(null);
+      tContrasena.setText(null);
+      buscando.setVisible(false);
+      
     } else {
+      //Mostrar mensaje al usuario
       Alert alert = new Alert(AlertType.ERROR);
       alert.setTitle("Error");
       alert.setHeaderText(null);
       alert.setContentText("Usuario o contraseña inválidos");
-
+      alert.showAndWait();
+    }
+    }else{
+      //Mostrar mensaje al usuario
+      Alert alert = new Alert(AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText(null);
+      alert.setContentText("No has ingresado tus datos de usuario");
       alert.showAndWait();
     }
   }
