@@ -42,6 +42,9 @@ public void agregarUsuario(){
   arch.escribirUsuario(usuarios);
 }
 
+/**
+ * Muestra los usuarios que existen
+ */
 public void mostrarUsuarios(){
   for (int i = 0; i < usuarios.size(); i++) {
     System.out.println(usuarios.get(i).toString());
@@ -49,6 +52,12 @@ public void mostrarUsuarios(){
   }
 }
 
+/**
+ * Busca un usuario en el arreglo
+ * @param usu Un String con el nombre de usuario a buscar
+ * @param pass Un String con la contraseña del usuario
+ * @return True si usuario y contraseña coinciden con los almacenados, False si no
+ */
 public boolean buscarUsuario(String usu, String pass){
   boolean existe=false;
   for (int i = 0; i < usuarios.size(); i++) {

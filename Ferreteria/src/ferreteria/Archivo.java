@@ -166,6 +166,11 @@ public class Archivo {
     }
     return temp;
     }
+  
+  /**
+   * Verifica si existe un archivo del cual leer
+   * @return True si existe, False si no existe
+   */
  public boolean existeUsuario(){
     try{
       fis = new FileInputStream("usuarios.txt");

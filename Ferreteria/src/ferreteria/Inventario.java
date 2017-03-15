@@ -72,7 +72,7 @@ public class Inventario {
 
   /**
    * Muestra la información del producto
-   *
+   * @return Un String con la información del producto
    * @param indice Espera un entero para indicar la posición del array en la que se encuentra
    */
   public String mostrarInformacion(int indice) {
@@ -87,7 +87,7 @@ public class Inventario {
    * @return Índice del array donde se encontró la clave
    */
   public int buscarClave(String claveB) {
-    int indice = 0;
+    int indice = -1;
     for (int i = 0; i < stock.size(); i++) {
       String clave = stock.get(i).getClave();
       if (clave.equalsIgnoreCase(claveB)) {
@@ -100,6 +100,7 @@ public class Inventario {
 
   /**
    * Elimina un elemento del inventario
+   * @param indice Un entero indicando la posición del producto a eliminar
    */
   public void eliminarElemento(int indice) {
     stock.remove(indice);
@@ -145,6 +146,15 @@ public class Inventario {
     arch.escribirStock(stock);
   }
 
+  /**
+   * Permite editar un producto desde la interfaz gráfica
+   * @param nombre String con el nombre del producto
+   * @param descripcion String con la descripción del producto
+   * @param precio double con el precio del producto
+   * @param existencia double con la existencia del producto
+   * @param tipo String con el tipo de unidad (pieza, kg, m, etc)
+   * @param indice int indicando la posición del elemento a editar
+   */
   public void editarInterfaz(String nombre, String descripcion, double precio, double existencia, String tipo, int indice) {
     stock.get(indice).setNombre(nombre);
      stock.get(indice).setDescripcion(descripcion);
@@ -269,10 +279,20 @@ public class Inventario {
     }
   }
 
+  /**
+   * Recupera un producto en específico
+   * @param indice int con la posición del elemento a recuperar
+   * @return un objeto de tipo Producto
+   */
   public Producto getProducto(int indice) {
     return stock.get(indice);
   }
   
+  /**
+   * Reemplaza un producto en el stock, este método se llama al editar un producto desde la interfaz
+   * @param indice la posición del elemento a reemplazar
+   * @param prod un objeto Producto que será insertado en la posición especificada
+   */
   public void reemplazar(int indice, Producto prod){
     stock.set(indice, prod);
     arch.escribirStock(stock);
