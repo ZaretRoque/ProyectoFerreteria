@@ -54,6 +54,15 @@ public class VenderController implements Initializable {
       
       try {//Manejar la excepción en caso de que se haya ingresado una letra
         cantidad = Integer.parseInt(cantidadS);
+        if(cantidad == 0){
+          //Mostrar mensaje al usuario
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText("No puedes vender 0 productos. Imbécil");
+        alert.showAndWait();
+          return;
+        }
       } catch (NumberFormatException e) {
         //Mostrar mensaje al usuario
         Alert alert = new Alert(Alert.AlertType.ERROR);

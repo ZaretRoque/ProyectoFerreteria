@@ -62,18 +62,19 @@ public class LoginController implements Initializable {
     if ((existe == true) && (usuario.equals("admin"))) {
       //Abre la ventana con las opciones para el administrador
       System.out.println("admin");
-      principal.mostrarMenuAdmin();
-      tUsuario.setText(null);
-      tContrasena.setText(null);
+      
+      tUsuario.clear();
+      tContrasena.clear();
       buscando.setVisible(false);
+      principal.mostrarMenuAdmin();
       
     } else if ((existe == true) && (usuario.equals("vendedor"))) {
       //Abre la ventana con las opciones para el vendedor
       System.out.println("vendedor");
-      principal.mostrarMenuVendedor();
-      tUsuario.setText(null);
-      tContrasena.setText(null);
+      tUsuario.clear();
+      tContrasena.clear();
       buscando.setVisible(false);
+      principal.mostrarMenuVendedor();
       
     } else {
       //Mostrar mensaje al usuario
